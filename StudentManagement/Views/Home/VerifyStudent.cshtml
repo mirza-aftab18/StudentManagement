@@ -1,0 +1,47 @@
+﻿@model StudentVerificationViewModel
+
+<form asp-action="VerifyStudent" method="post">
+
+    <div class="mb-3">
+        <label asp-for="Nationality" class="form-label"></label>
+
+        <select asp-for="Nationality"
+                asp-items="new SelectList(ViewBag.Nationalities)"
+                class="form-control">
+
+            <option value="">-- Select Nationality --</option>
+
+        </select>
+
+        <span asp-validation-for="Nationality" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CNIC" class="form-label"></label>
+
+        <input asp-for="CNIC"
+               class="form-control"
+               id="cnic"
+               maxlength="15" />
+
+        <span asp-validation-for="CNIC" class="text-danger"></span>
+    </div>
+    
+    <div id="result" class="mt-3"></div>
+
+    <button type="submit"
+            id="btnContinue"
+            class="btn btn-primary mt-3"
+            disabled>
+        Continue Registration
+    </button>
+
+</form>
+
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+    <script src="~/js/verifyStudent.js"></script>
+}

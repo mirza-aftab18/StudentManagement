@@ -1,0 +1,250 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/* =========================================
+   Dashboard Cards
+========================================= */
+
+.card {
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .15) !important;
+    }
+
+    .card h2 {
+        font-weight: bold;
+    }
+
+    .card i {
+        opacity: .9;
+    }
+/* Dashboard Links */
+
+a.text-decoration-none {
+    color: inherit;
+}
+
+    a.text-decoration-none:hover {
+        color: inherit;
+    }
+
+.card {
+    cursor: pointer;
+}
+
+/* Navbar */
+
+.navbar .nav-link {
+    transition: .3s;
+    margin-left: 8px;
+    border-radius: 6px;
+    padding: 8px 15px;
+}
+
+    .navbar .nav-link:hover {
+        background: rgba(255,255,255,.15);
+    }
+
+    .navbar .nav-link.active {
+        background: rgba(255,255,255,.25);
+        color: white !important;
+    }
+
+/* ================= NAVBAR ================= */
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,.88) !important;
+    font-weight: 500;
+    transition: .2s;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #fff !important;
+        background: rgba(255,255,255,.15);
+        border-radius: 8px;
+    }
+
+    .navbar-nav .nav-link.active {
+        color: #fff !important;
+        background: rgba(255,255,255,.18);
+        border-radius: 8px;
+    }
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 700;
+}
+
+.dropdown-toggle {
+    color: rgba(255,255,255,.88) !important;
+}
+
+    .dropdown-toggle:hover {
+        color: #fff !important;
+    }
+
+/* ================= PRINT ================= */
+
+@media print 
+{
+
+    nav,
+    footer,
+    .btn,
+    .modal,
+    .card-header {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        font-size: 13px;
+    }
+
+    .card {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    img {
+        page-break-inside: avoid;
+    }
+
+    .print-header {
+        display: block !important;
+    }
+
+    table {
+        page-break-inside: avoid;
+    }
+
+    tr {
+        page-break-inside: avoid;
+    }
+
+    td, th {
+        page-break-inside: avoid;
+    }
+
+    .table td,
+    .table th {
+        padding: 6px !important;
+    }
+
+    .print-header {
+        margin-bottom: 10px !important;
+    }
+
+    .card-body {
+        padding: 10px !important;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+
+    .rounded-circle {
+        width: 170px !important;
+        height: 170px !important;
+    }
+
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    .card {
+        page-break-inside: avoid;
+    }
+
+    .col-md-4 {
+        text-align: center !important;
+    }
+}
+
+/* Hidden while viewing */
+.print-header {
+    display: none;
+}
+
+.dashboard-chart-card .card-body {
+    min-height: 320px;
+}
+
+/* Dashboard Chart Cards */
+.dashboard-chart-card {
+    border: none;
+    border-radius: 15px;
+    transition: all .3s ease;
+    overflow: hidden;
+}
+
+    .dashboard-chart-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(0,0,0,.15);
+    }
+
+    .dashboard-chart-card .card-header {
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .dashboard-chart-card .card-body {
+        min-height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+    }

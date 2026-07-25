@@ -1,0 +1,163 @@
+﻿@model StudentRegistrationViewModel
+
+<form asp-action="RegisterStudent"
+      method="post"
+      enctype="multipart/form-data">
+
+    <!-- Nationality -->
+    <div class="mb-3">
+        <label asp-for="Nationality" class="form-label"></label>
+        <input asp-for="Nationality" class="form-control" readonly />
+    </div>
+
+    <!-- CNIC -->
+    <div class="mb-3">
+        <label asp-for="CNIC" class="form-label"></label>
+        <input asp-for="CNIC" class="form-control" readonly />
+    </div>
+
+    <!-- Profile Image -->
+    <div class="mb-3">
+
+        <label asp-for="ProfileImage" class="form-label"></label>
+
+        <!-- Image Preview -->
+        <div class="mb-3">
+            <img id="imagePreview"
+                 src="#"
+                 style="display:none;
+            width:150px;
+            height:150px;
+            object-fit:cover;
+            border-radius:10px;
+            border:1px solid #ccc;" />
+        </div>
+
+        <input asp-for="ProfileImage"
+               id="profileImage"
+               type="file"
+               class="form-control"
+               accept="image/*" />
+
+        <span asp-validation-for="ProfileImage"
+              class="text-danger"></span>
+
+    </div>
+
+    <!-- Name -->
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <!-- Father's Name -->
+    <div class="mb-3">
+        <label asp-for="FatherName" class="form-label"></label>
+        <input asp-for="FatherName" class="form-control" />
+        <span asp-validation-for="FatherName" class="text-danger"></span>
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="mb-3">
+        <label asp-for="DateOfBirth" class="form-label"></label>
+        <input asp-for="DateOfBirth"
+               type="date"
+               class="form-control" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <!-- Gender -->
+    <div class="mb-3">
+
+        <label class="form-label">Gender</label>
+
+        <div class="form-check">
+            <input asp-for="Gender"
+                   type="radio"
+                   value="Male"
+                   class="form-check-input" />
+            <label class="form-check-label">Male</label>
+        </div>
+
+        <div class="form-check">
+            <input asp-for="Gender"
+                   type="radio"
+                   value="Female"
+                   class="form-check-input" />
+            <label class="form-check-label">Female</label>
+        </div>
+
+        <span asp-validation-for="Gender" class="text-danger"></span>
+
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="mb-3">
+        <label asp-for="PhoneNumber" class="form-label"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <!-- Address -->
+    <div class="mb-3">
+        <label asp-for="Address" class="form-label"></label>
+        <textarea asp-for="Address"
+                  rows="3"
+                  class="form-control"></textarea>
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <!-- Blood Group -->
+    <div class="mb-3">
+        <label asp-for="BloodGroup" class="form-label"></label>
+
+        <select asp-for="BloodGroup"
+                asp-items="new SelectList(ViewBag.BloodGroups)"
+                class="form-control">
+
+            <option value="">-- Select Blood Group --</option>
+
+        </select>
+
+        <span asp-validation-for="BloodGroup" class="text-danger"></span>
+    </div>
+
+    <!-- Department -->
+    <div class="mb-3">
+        <label asp-for="DepartmentId" class="form-label"></label>
+
+        <select asp-for="DepartmentId"
+                asp-items="ViewBag.Departments"
+                class="form-control">
+
+            <option value="">-- Select Department --</option>
+
+        </select>
+
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary">
+        Register
+    </button>
+
+</form>
+</br>
+<a asp-action="StudentsList" class="btn btn-secondary">
+    Back to Students
+</a>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/verifyStudent.js"></script>
+}

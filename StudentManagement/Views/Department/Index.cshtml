@@ -1,0 +1,42 @@
+﻿@model List<Department>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var department in Model)
+        {
+            <tr>
+                <td>@department.Id</td>
+                <td>@department.Name</td>
+
+                <td>
+                    <a asp-action="EditDepartment"
+                       asp-route-id="@department.Id"
+                       class="btn btn-warning">
+                        Edit
+                    </a>
+                </td>
+
+                <td>
+                    <a asp-action="DeleteDepartment"
+                       asp-route-id="@department.Id"
+                       class="btn btn-danger">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="CreateDepartment" class="btn btn-primary">
+    Add Department
+</a>
