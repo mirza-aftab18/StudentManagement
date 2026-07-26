@@ -31,8 +31,9 @@ namespace StudentManagement.Controllers
         {
             DashboardViewModel dashboard = new DashboardViewModel();
 
-            dashboard.SchoolName = "GGPS Lodi Jajja Tehsil Pasrur District Sialkot";
-            dashboard.EMISCode = "34320564";
+            dashboard.SchoolName = "Aspire Group of Colleges";
+            dashboard.Campus = "Narowal Campus";
+            dashboard.Location = "Narowal City, District Narowal";
 
             dashboard.TotalStudents = _context.Students.Count();
             dashboard.TotalDepartments = _context.Departments.Count();

@@ -4,7 +4,9 @@
     {
         public string SchoolName { get; set; }
 
-        public string EMISCode { get; set; }
+        public string Campus { get; set; }
+
+        public string Location { get; set; }
 
         public int TotalStudents { get; set; }
 
